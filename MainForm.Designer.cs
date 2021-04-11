@@ -34,6 +34,8 @@ namespace AutoPriority
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.infoLabel = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -83,15 +85,37 @@ namespace AutoPriority
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.infoLabel);
+            this.panel3.Controls.Add(this.checkBox1);
             this.panel3.Controls.Add(this.comboBox1);
             this.panel3.Controls.Add(this.button2);
             this.panel3.Controls.Add(this.textBox1);
             this.panel3.Controls.Add(this.button1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 403);
+            this.panel3.Location = new System.Drawing.Point(0, 396);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(653, 54);
+            this.panel3.Size = new System.Drawing.Size(653, 61);
             this.panel3.TabIndex = 1;
+            // 
+            // infoLabel
+            // 
+            this.infoLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.infoLabel.Location = new System.Drawing.Point(0, 46);
+            this.infoLabel.Name = "infoLabel";
+            this.infoLabel.Size = new System.Drawing.Size(653, 15);
+            this.infoLabel.TabIndex = 5;
+            this.infoLabel.Text = "已启动";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(531, 18);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(89, 19);
+            this.checkBox1.TabIndex = 4;
+            this.checkBox1.Text = "自动刷新";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // comboBox1
             // 
@@ -138,13 +162,15 @@ namespace AutoPriority
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.CheckBox checkBox1;
+        public System.Windows.Forms.Label infoLabel;
     }
 }
