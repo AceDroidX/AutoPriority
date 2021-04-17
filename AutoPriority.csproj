@@ -71,14 +71,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BGWorker.cs" />
+    <Compile Include="UserWorker.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PriorityUtil.cs" />
-    <Compile Include="ProcessUtil.cs" />
+    <Compile Include="util\PriorityUtil.cs" />
+    <Compile Include="ProcessProfileModel.cs" />
+    <Compile Include="util\ProcessUtil.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

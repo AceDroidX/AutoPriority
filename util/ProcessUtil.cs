@@ -64,6 +64,10 @@ namespace AutoPriority
             //Console.WriteLine(string.Join(",", pids));
             return pids;
         }
+        public static List<Process> GetProcessByModel(ProcessProfileModel ppm)
+        {
+            return GetProcessByName(ppm.processName);
+        }
 
         static List<Process> GetProcessByPID(List<int> pids)
         {
