@@ -13,8 +13,7 @@ namespace AutoPriority
 {
     public partial class MainForm : Form
     {
-        UserWorker userWorker;
-        BGWorker bgWorker;
+        ProcessWorker bgWorker;
         Timer timer1;
         public List<Process> targetProcess;
         BindingList<ProcessProfileModel> processProfileList;
@@ -22,8 +21,7 @@ namespace AutoPriority
         {
             InitializeComponent();
 
-            userWorker = new UserWorker(this);
-            bgWorker = new BGWorker(this);
+            bgWorker = new ProcessWorker();
 
             BindPriorityList(comboBox3);
 
@@ -55,6 +53,11 @@ namespace AutoPriority
             bgWorker.RunWorker();
         }
 
+        /// <summary>
+        /// 选择框更新事件：全局启用
+        /// </summary>
+        /// <param name="sender">事件参数</param>
+        /// <param name="e">事件参数</param>
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1.Checked)
@@ -69,6 +72,11 @@ namespace AutoPriority
             }
         }
 
+        /// <summary>
+        /// 按钮点击事件：添加/设置进程配置
+        /// </summary>
+        /// <param name="sender">事件参数</param>
+        /// <param name="e">事件参数</param>
         private void button3_Click(object sender, EventArgs e)
         {
             ProcessProfileModel ppm = (ProcessProfileModel)comboBox2.SelectedItem;
@@ -97,11 +105,20 @@ namespace AutoPriority
             }
         }
 
+        /// <summary>
+        /// 选择栏更新事件：进程配置
+        /// </summary>
+        /// <param name="sender">事件参数</param>
+        /// <param name="e">事件参数</param>
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             CheckSelectedProfile();
         }
 
+        /// <summary>
+        /// 根据选择的进程配置刷新UI
+        /// 检测 是否选择了一个有效的进程 并修改UI
+        /// </summary>
         private void CheckSelectedProfile()
         {
             ProcessProfileModel ppm = (ProcessProfileModel)comboBox2.SelectedItem;
@@ -121,6 +138,11 @@ namespace AutoPriority
             }
         }
 
+        /// <summary>
+        /// 按钮点击事件：删除选择的进程配置
+        /// </summary>
+        /// <param name="sender">事件参数</param>
+        /// <param name="e">事件参数</param>
         private void deletePPM_Click(object sender, EventArgs e)
         {
             ProcessProfileModel ppm = (ProcessProfileModel)comboBox2.SelectedItem;

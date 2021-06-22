@@ -12,21 +12,21 @@ namespace AutoPriority
     {
         public string processName;
         private bool _enableState;
-        private BGWorker worker;
+        private ProcessWorker worker;
         public bool enableState { get => _enableState; set { SetState(value); } }
         public ProcessPriorityClass priority;
         public ProcessProfileModel()
         {
             this.processName = null;
         }
-        public ProcessProfileModel(BGWorker worker, string processName, bool enableState, ProcessPriorityClass priority)
+        public ProcessProfileModel(ProcessWorker worker, string processName, bool enableState, ProcessPriorityClass priority)
         {
             this.worker = worker;
             this.processName = processName;
             this.enableState = enableState;
             this.priority = priority;
         }
-        public ProcessProfileModel(BGWorker worker, string processName, CheckState enableState, ProcessPriorityClass priority)
+        public ProcessProfileModel(ProcessWorker worker, string processName, CheckState enableState, ProcessPriorityClass priority)
         {
             this.worker = worker;
             this.processName = processName;

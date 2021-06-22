@@ -8,14 +8,12 @@ using System.Threading.Tasks;
 
 namespace AutoPriority
 {
-    class BGWorker
+    class ProcessWorker
     {
-        MainForm form;
         private List<ProcessProfileModel> processProfileList;
         public BackgroundWorker bgWorker;
-        public BGWorker(MainForm form)
+        public ProcessWorker()
         {
-            this.form = form;
             bgWorker = new BackgroundWorker();
             bgWorker.DoWork += new DoWorkEventHandler(DoWork);
             bgWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(RunWorkerCompleted);

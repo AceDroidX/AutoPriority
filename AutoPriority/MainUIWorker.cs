@@ -9,11 +9,11 @@ using System.Windows.Forms;
 
 namespace AutoPriority
 {
-    class UserWorker
+    class MainUIWorker
     {
         MainForm form;
         public BackgroundWorker userWorker;
-        public UserWorker(MainForm form)
+        public MainUIWorker(MainForm form)
         {
             this.form = form;
             userWorker = new BackgroundWorker();
